@@ -1,8 +1,10 @@
 <header class="app-header">
     <div class="logo">Employee Manager</div>
     <nav>
-        <a routerLink="/dashboard">Dashboard</a>
-        <a routerLink="/register">Register</a>
-        <a routerLink="/login">Login</a>
+        <a routerLink="/welcome" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        <a routerLink="/register" routerLinkActive="active">Register</a>
+        <a routerLink="/login" routerLinkActive="active">Login</a>
     </nav>
 </header>

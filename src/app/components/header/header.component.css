@@ -1,24 +1,27 @@
 .app-header {
-    background: linear-gradient(90deg, #1976d2, #2196f3);
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
     padding: 1rem 2rem;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.app-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
-.app-header nav a {
+nav a {
     color: white;
     text-decoration: none;
     margin-left: 1.5rem;
-    transition: color 0.3s;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.app-header nav a:hover {
+nav a:hover,
+nav a.active {
     color: #ffeb3b;
 }
