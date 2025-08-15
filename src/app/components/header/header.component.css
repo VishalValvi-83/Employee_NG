@@ -1,0 +1,24 @@
+.app-header {
+    background: linear-gradient(90deg, #1976d2, #2196f3);
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.app-header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+.app-header nav a:hover {
+    color: #ffeb3b;
+}
