@@ -1,14 +1,18 @@
 <div class="form-container">
     <h2>Register Employee</h2>
-    <form>
+    <form >
         <label>Full Name</label>
-        <input type="text" placeholder="Enter full name">
-        <label>Position</label>
-        <input type="text" placeholder="Enter position">
+        <input type="text" placeholder="Enter full name" name="name"
+            [(ngModel)]="userData.name" required>
+
         <label>Email</label>
-        <input type="email" placeholder="Enter email">
+        <input type="email" placeholder="Enter email" name="email"
+            [(ngModel)]="userData.email" required>
+
         <label>Password</label>
-        <input type="password" placeholder="Enter password">
-        <button type="submit" class="success">Register</button>
+        <input type="password" placeholder="Enter password" name="password"
+            [(ngModel)]="userData.password" required>
+
+        <button type="submit" (click)="register()" class="success">Register</button>
     </form>
 </div>

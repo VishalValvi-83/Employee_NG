@@ -16,4 +16,18 @@ export class EmployeeService {
     return this.http.post("http://localhost:8080/login", userData)
 
   }
+
+  register(userData: any): Observable<any> {
+    if (!userData.password) {
+      throw new Error('Password is required');
+    }
+    if (!userData.name) {
+      throw new Error('Name is required');
+    }
+    if (!userData.email) {
+      throw new Error('Email is required');
+    }
+    return this.http.post("http://localhost:8080/register", userData)
+
+  }
 }
