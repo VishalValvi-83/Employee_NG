@@ -2,9 +2,12 @@
     <h2>Login</h2>
     <form>
         <label>Email</label>
-        <input type="email" placeholder="Enter your email">
+        <input type="email" placeholder="Enter your email" name="email" autocomplete="username" required
+            [(ngModel)]="userData.email">
         <label>Password</label>
-        <input type="password" placeholder="Enter your password">
-        <button type="submit">Login</button>
+        <input type="password" placeholder="Enter your password" required
+            [(ngModel)]="userData.password" name="password"
+            autocomplete="current-password">
+        <button type="submit" (click)="login()">Login</button>
     </form>
 </div>
