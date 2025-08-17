@@ -1,18 +1,31 @@
 <div class="form-container">
     <h2>Register Employee</h2>
     <form [formGroup]="employees" class="form" (ngSubmit)="register()">
-        <label>Full Name</label>
-        <input type="text" placeholder="Enter full name" name="name"
-            formControlName="name" required>
+        <div class="form-control">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter full name" name="name"
+                formControlName="name" required>
+            <small
+                *ngIf="employees.get('name')?.invalid && employees.get('name')?.touched">Invalid
+                name</small>
+        </div>
+        <div class="form-control">
+            <label>Email</label>
+            <input type="email" placeholder="Enter email" name="email"
+                formControlName="email" required>
+            <small
+                *ngIf="employees.get('email')?.invalid && employees.get('email')?.touched">Invalid
+                email address</small>
+        </div>
+        <div class="form-control">
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" name="password"
+                formControlName="password" required>
+            <small
+                *ngIf="employees.get('password')?.invalid && employees.get('password')?.touched">Invalid
+                password</small>
 
-        <label>Email</label>
-        <input type="email" placeholder="Enter email" name="email"
-            formControlName="email" required>
-
-        <label>Password</label>
-        <input type="password" placeholder="Enter password" name="password"
-            formControlName="password" required>
-
+        </div>
         <button type="submit"
             class="success">Register</button>
     </form>
