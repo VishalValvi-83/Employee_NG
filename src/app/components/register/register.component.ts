@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
@@ -18,13 +19,21 @@ export class RegisterComponent {
     password: ''
   }
 
+  employees = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(3)])
+  })
   register() {
-    this.service.register(this.userData).subscribe({
-      next: (user) => {
-        alert("Registration successful!, welcome " + this.userData.name);
+    this.service.register(this.employees.value).subscribe({
+      next: () => {
+        alert("Registration successful!, welcome !" + this.employees.value.name);
         window.location.href = '/login';
       },
-      error: (err) => console.error("Registration failed:", err)
+      error: (err) => {
+        alert("Registration failed, please try again.");
+        console.error("Registration failed:", err)
+      }
     })
   }
 }
